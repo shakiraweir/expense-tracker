@@ -1,0 +1,26 @@
+button {
+    background: gray; 
+    padding: 20px 40px;
+    /* border: solid purple 1px; */
+    font-size: 1.75em;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-top: 200px;
+}
+
+.links {
+    /* border: solid blue 1px; */
+    height: 80vh;
+}
+Link, a{
+    text-decoration: none;
+    color: #000;
+    padding: 20px 40px;
+}
+
+.links p {
+    font-size: 1.75em;
+    margin-top: 175px;
+    text-transform: uppercase;
+}
+
