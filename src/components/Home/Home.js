@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
+
+// The home page can show ALL expense and revenue entries. Expenses in red and revenue in green. The expense and revenue entries will populate above the nav bar.
+
 class Home extends Component {
     render() {
         return (
             <div>
                 <div className="links">
                     <nav className="category">
-                        <Link to="/revenue"><h3>Income</h3>
+                        <Link to="/revenue"><h3><span className="money-left">$</span> Add Income</h3>
                         </Link>
-                        <Link to="/expense"><h3>Expense</h3>
+                        <Link to="/expense"><h3><span className="money-right">$</span> Add Expense</h3>
                         </Link>
                     </nav>
                     <footer className="total">
-                        <div className="btn">
-                            <button className="btn-left">Income</button>
-                            <button className="btn-right">Expense</button>
-                        </div>
-                        <h3>Balance</h3>
-                    </footer>
+	                    <div className="btn">
+	                        <button className="btn-left">Income</button>
+	                        <button className="btn-right">Expense</button>
+	                    </div>
+	                    <p>Current Balance</p>
+	                </footer>
                 </div>
-               <p>Total: ________</p>
             </div>
-            
         );
     }
 }

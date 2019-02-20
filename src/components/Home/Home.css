@@ -1,15 +1,10 @@
-h3 {
-    color: #fff;
-    text-transform: uppercase;
-}
-
 .links {
-    background: rgba(13, 26, 38, 0.7); 
-    height: 8vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgba(13, 26, 38, 0.7); 
+    height: 8vh;
 }
 
 .category {
@@ -19,52 +14,71 @@ h3 {
     height: 100%;
 }
 
+h3 {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.money-left {
+    font-size: 1.5em;
+    color: #4d9900;    
+}
+
+.money-right {
+    font-size: 1.5em;
+    color: #cc0000;    
+}
 .total {
-    position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    position: absolute;
+    border-top: solid lightgray 1px;
     bottom: 0;
-    height: 8vh;
+    height: 15vh;
     width: 100%;
-    background: rgba(13, 26, 38, 0.7); 
 }
 
 .btn {
-    margin: 5px 20px;
+    padding: 5px 40px;
 }
 
-button {
-    background: #260d26; 
-    color: #fff;
-    border: solid #260d26 1px;
-    padding: 5px 15px;;
+.total p {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 22px;
+    padding: 0 60px;
+    margin-top: 5px;
+}
+
+.btn-left, .btn-right {
+    color: #fff;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .btn-left {
-    background: #26260d;
-}
-
-.btn-right:hover {
-    background: #26260d;
+    background: rgba(13, 26, 38, 0.7);
 }
 
 .btn-left:hover {
     background: #0d1a26;
+    border: solid #0d1a26 3px;
 }
+
+.btn-right {
+    background: #0d1a26;
+}
+
+.btn-right:hover {
+    background: rgba(13, 26, 38, 0.7);
+    border: solid rgba(13, 26, 38, 0.0) 3px;
+}
+
 Link, a{
     text-decoration: none;
     color: #000;
-    /* padding: 20px 40px; */
     width: 100vw;
     border-right: solid black 1px;
 }
-
-.links p {
-    font-size: 1.75em;
-    margin-top: 175px;
-    text-transform: uppercase;
-}
-
