@@ -2,7 +2,10 @@
   "name": "expense-tracker",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://fun-budget-tool.herokuapp.com",
   "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-router-dom": "^4.3.1",
