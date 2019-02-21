@@ -10,6 +10,9 @@ class Revenue extends Component {
         axios.get('https://fun-budget-tool.herokuapp.com/revenue')
             .then(result => {
                 console.log(result)
+                // this.setState = { result }
+                // console.log(this.state.name)
+
             })
     }
     render() {
