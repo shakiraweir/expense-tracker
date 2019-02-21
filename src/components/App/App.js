@@ -6,6 +6,7 @@ import Revenue from '../Revenue/Revenue'
 import ShowRevenue from '../Revenue/ShowRevenue'
 import Expense from '../Expense/Expense'
 import ShowExpense from '../Expense/ShowExpense'
+import CreateRevenue from '../Revenue/CreateRevenue'
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         <Route path="/revenue/show" exact render={() => <ShowRevenue /> } />
         <Route path="/expense" exact render={() => <Expense /> } />
         <Route path="/expense/show" exact render={() => <ShowExpense /> } />
+        <Route path='/revenue' exact render={() => <CreateRevenue /> } />
       </div>
     );
   }
