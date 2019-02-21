@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 class Revenue extends Component {
     // The revenue page can show ALL current revenue entries AND also include a form to create a new entry. The new revenue will populate above the nav bar.
+    
+    componentDidMount() {
+        axios.get('https://fun-budget-tool.herokuapp.com/revenue')
+            .then(result => {
+                console.log(result)
+            })
+    }
     render() {
         return (
             <div>
