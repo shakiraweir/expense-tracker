@@ -20,10 +20,11 @@ class CreateRevenue extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        axios.post('https://fun-budget-tool.herokuapp.com/expense', this.state)
-        // .then(result => {
-        //     console.log(result)
-        //     this.props.revenue.push('/expense')
+        axios.post('https://fun-budget-tool.herokuapp.com/revenue', this.state)
+        .then(result => {
+            console.log(result)
+            // this.props.history.push('/revenue')
+        })
     }
  
                     // console.log('test submitted')

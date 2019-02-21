@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import CreateRevenue from './CreateRevenue'
+// import CreateRevenue from './CreateRevenue'
 
 
 class Revenue extends Component {
@@ -49,7 +49,7 @@ class Revenue extends Component {
                         <Link to="/"><h3>Add Revenue</h3>
                         </Link>
                     </nav>
-                <CreateRevenue />
+                {/* <CreateRevenue /> */}
                 {revenueList}
             </div>
         </div>
