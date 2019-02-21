@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Expense.css'
 
 
 class Expense extends Component {
@@ -32,7 +33,7 @@ class Expense extends Component {
                 return (
                     <div className='expenseRevenue' key={exp.id}>
                         <span className='expenseName'>{exp.name}</span>
-                        <span className='expenseAmount'> ${exp.amount}</span>    
+                        <span className='expenseAmount'> ${exp.cost}</span>    
                     </div>
                 )
         })
