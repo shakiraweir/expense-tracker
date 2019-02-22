@@ -23,7 +23,7 @@ class CreateRevenue extends Component {
         axios.post('https://fun-budget-tool.herokuapp.com/revenue', this.state)
         .then(result => {
             console.log(result)
-            // this.props.history.push('/revenue')
+            this.props.history.push('/revenue')
         })
     }
  

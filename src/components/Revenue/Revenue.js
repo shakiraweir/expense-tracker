@@ -20,19 +20,18 @@ class Revenue extends Component {
                             revenue: res.data
                         })
                     })
+                   
 
             }
-
             handleSubmit(event) {
                 event.preventDefault()
 
-            }
+            } 
+           
     
     render() {
         // console.log(this.state.revenue)
-        const { revenue } = this.state;
-        const revenueList = 
-            revenue.map(rev => {
+        let revenueList = this.state.revenue.map(rev => {
                 return (
                     <div className='individualRevenue' key={rev.id}>
                         <span className='revenueName'>{rev.name}</span>
@@ -46,10 +45,13 @@ class Revenue extends Component {
                     <nav className="category">
                         <Link to="/"><h3>Back</h3>
                         </Link>
-                        <Link to="/"><h3>Add Revenue</h3>
+                        <Link to="/revenue/create"><h3>Add Revenue</h3>
                         </Link>
                     </nav>
                 {/* <CreateRevenue /> */}
+               
+            </div>
+            <div>
                 {revenueList}
             </div>
         </div>

@@ -22,7 +22,7 @@ class App extends Component {
         <Route path="/revenue/show" exact render={() => <ShowRevenue /> } />
         <Route path="/expense" exact render={() => <Expense /> } />
         <Route path="/expense/show" exact render={() => <ShowExpense /> } />
-        <Route path='/revenue' exact render={() => <CreateRevenue /> } />
+        <Route path='/revenue/create' exact render={routerProps => <CreateRevenue {...routerProps} /> } />
       </div>
     );
   }
