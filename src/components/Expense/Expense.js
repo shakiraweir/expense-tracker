@@ -12,30 +12,6 @@ class Expense extends Component {
             expense: [ ]
         }
     }
-<<<<<<< HEAD
-            componentDidMount() {
-                axios.get('https://fun-budget-tool.herokuapp.com/expense')
-                    .then(res => {
-                        // console.log(res.data)
-                        this.setState({
-                            expense: res.data
-                        })
-                    })
-
-            }
-
-
-    
-    render() {
-        // console.log(this.state.expense)
-        const { expense } = this.state;
-        const expenseList = 
-            expense.map(exp => {
-                return (
-                    <div className='expenseRevenue' key={exp.id}>
-                        <span className='expenseName'>{exp.name}</span>
-                        <span className='expenseAmount'> ${exp.cost}</span>    
-=======
     componentDidMount() {
         axios.get('https://fun-budget-tool.herokuapp.com/expense')
             .then(res => {
@@ -56,7 +32,6 @@ class Expense extends Component {
                     <div className='individualRevenue' key={exp.id}>
                         <span className='revenueName'>{exp.name}</span>
                         <span className='revenueAmount'> ${exp.amount}</span>    
->>>>>>> expenses
                     </div>
                 )
         })
@@ -69,25 +44,12 @@ class Expense extends Component {
                         <Link to="/expense/create"><h3>Add Expense</h3>
                         </Link>
                     </nav>
-<<<<<<< HEAD
-                    <div className="create">
-                        <h3 className="subtitle">New Expense</h3>
-                        <form className="new-entry">
-                            <textarea cols="25" rows="1" placeholder="Title"></textarea>
-                            <textarea cols="25" rows="1" placeholder="$0.00"></textarea>
-                        </form>
-                        <div>
-                            <button className="btn-add"> +</button>  
-                        </div>
-                        {expenseList}
-=======
                     </div>
                 <div>
                     {expenseList}
->>>>>>> expenses
                 </div>
             </div>
-        </div>
+       
         );
     }
 }

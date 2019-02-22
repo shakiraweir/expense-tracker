@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import '../Expense/Expense.css'
+import '../Expense/Expense.css'
 import axios from 'axios'
 
 class CreateRevenue extends Component {
@@ -64,7 +64,7 @@ class CreateRevenue extends Component {
                         </form>
             </div>
         </div>
-        );
+        )
     }
 }
 
