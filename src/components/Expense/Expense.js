@@ -26,6 +26,25 @@ class Expense extends Component {
     handleSubmit(event) {
         event.preventDefault()
     } 
+<<<<<<< HEAD
+=======
+
+    handleDelete (event){
+        event.preventDefault();
+        axios
+          .delete(`https://fun-budget-tool.herokuapp.com/expense/${this.state.expenses._id}`)
+          .then(res => {
+            console.log(res.data);
+            this.setState({
+              expenses: res.data
+            });
+            window.location.reload();
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      };
+>>>>>>> expenses
     
     render() {
         let expenseList = this.state.expenses.map(exp => {

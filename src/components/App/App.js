@@ -6,8 +6,14 @@ import Revenue from '../Revenue/Revenue'
 import CreateRevenue from '../Revenue/CreateRevenue'
 import ShowRevenue from '../Revenue/ShowRevenue'
 import Expense from '../Expense/Expense'
+<<<<<<< HEAD
 import CreateExpense from '../Expense/CreateExpense'
 import ShowExpense from '../Expense/ShowExpense'
+=======
+import UpdateExpense from '../Expense/UpdateExpense'
+import ShowExpense from '../Expense/ShowExpense'
+import CreateExpense from '../Expense/CreateExpense'
+>>>>>>> expenses
 
 
 class App extends Component {
@@ -25,7 +31,12 @@ class App extends Component {
 
         <Route path="/expense" exact render={() => <Expense /> } />
         <Route path="/expense/create" exact render={routerProps => <CreateExpense {...routerProps} /> } />
+<<<<<<< HEAD
         <Route path="/expense/show" exact render={() => <ShowExpense /> } />
+=======
+        <Route path="/expense/:id" exact render={(routerProps) => <ShowExpense {...routerProps}/> } />
+        <Route path="/expense/edit/:id" exact render={(routerProps) => <UpdateExpense {...routerProps}/> } />
+>>>>>>> expenses
       </div>
     )
   }
