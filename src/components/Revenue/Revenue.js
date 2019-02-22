@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+// import CreateRevenue from './CreateRevenue'
 
 
 class Revenue extends Component {
@@ -19,16 +20,18 @@ class Revenue extends Component {
                             revenue: res.data
                         })
                     })
+                   
 
             }
+            handleSubmit(event) {
+                event.preventDefault()
 
-
+            } 
+           
     
     render() {
         // console.log(this.state.revenue)
-        const { revenue } = this.state;
-        const revenueList = 
-            revenue.map(rev => {
+        let revenueList = this.state.revenue.map(rev => {
                 return (
                     <div className='individualRevenue' key={rev.id}>
                         <span className='revenueName'>{rev.name}</span>
@@ -42,20 +45,14 @@ class Revenue extends Component {
                     <nav className="category">
                         <Link to="/"><h3>Back</h3>
                         </Link>
-                        <Link to="/"><h3>Logout</h3>
+                        <Link to="/revenue/create"><h3>Add Revenue</h3>
                         </Link>
                     </nav>
-                    <div className="create">
-                        <h3 className="subtitle">New Revenue</h3>
-                        <form className="new-entry">
-                            <textarea cols="25" rows="1" placeholder="Title"></textarea>
-                            <textarea cols="25" rows="1" placeholder="$0.00"></textarea>
-                        </form>
-                        <div>
-                            <button className="btn-add"> +</button>  
-                        </div>
-                        {revenueList}
-                </div>
+                {/* <CreateRevenue /> */}
+               
+            </div>
+            <div>
+                {revenueList}
             </div>
         </div>
         );
