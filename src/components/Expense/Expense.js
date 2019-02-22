@@ -9,44 +9,66 @@ class Expense extends Component {
     constructor() {
         super()
         this.state = {
-            expense: [ ]
+            expenses: [ ]
         }
+        this.handleDelete = this.handleDelete.bind(this);
     }
+
     componentDidMount() {
         axios.get('https://fun-budget-tool.herokuapp.com/expense')
             .then(res => {
                 // console.log(res.data)
                 this.setState({
-                    expense: res.data
+                    expenses: res.data
                 })
             })
     }
     handleSubmit(event) {
         event.preventDefault()
-
     } 
+
+    handleDelete (e){
+        e.preventDefault();
+        axios
+          .delete(`https://fun-budget-tool.herokuapp.com/expense/${this.state.expenses._id}`)
+          .then(res => {
+            console.log(res.data);
+            this.setState({
+              expenses: res.data
+            });
+            window.location.reload();
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      };
+    
     render() {
-        // console.log(this.state.revenue)
-        let expenseList = this.state.expense.map(exp => {
+        let expenseList = this.state.expenses.map(exp => {
                 return (
-                    <div className='individualRevenue' key={exp.id}>
-                        <span className='revenueName'>{exp.name}</span>
-                        <span className='revenueAmount'> ${exp.amount}</span>    
-                    </div>
+                    <div className='individualEntry' key={exp._id}>
+
+                        <Link to={'/expense/' + exp._id} className='revenueName'>  
+                            <span>{exp.name}</span >
+                        </Link> 
+                        <span className='revenueAmount'>
+                            ${exp.amount} 
+                        </span>             
+                    </div> 
                 )
         })
         return (
             <div>
                 <div className="links">
                     <nav className="category">
-                        <Link to="/"><h3>Back</h3>
-                        </Link>
-                        <Link to="/expense/create"><h3>Add Expense</h3>
-                        </Link>
+                        <Link to="/"><h3>Back</h3></Link>
+                        <Link to="/expense/create"><h3><span className="money-right">$</span> Add Expense</h3></Link>
                     </nav>
-                    </div>
-                <div>
+                </div>
+                <div className="data">
+                    <div className="dataEntries">
                     {expenseList}
+                    </div>
                 </div>
             </div>
         );

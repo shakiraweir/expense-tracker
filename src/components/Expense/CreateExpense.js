@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import '../Expense/Expense.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 class CreateExpense extends Component {
     constructor() {
@@ -53,7 +54,14 @@ class CreateExpense extends Component {
     render() {
         return (
             <div>
-                <div className="create">
+                <div className="links">
+                    <nav className="category">
+                        <Link to="/expense"><h3>Back</h3></Link>
+                        <Link to="/"><h3>Home</h3></Link>
+                    </nav>
+                </div>
+                <div className="data">
+                    <div className="create">
                         <h3 className="subtitle">New Expense</h3>
                         <form className="new-entry" onSubmit={this.handleSubmit}>
                             <textarea cols="25" rows="1" name="name" placeholder="Title" onChange={this.handleChange} value={this.state.name}></textarea>
@@ -62,8 +70,9 @@ class CreateExpense extends Component {
                             onChange={this.handleChange} value={this.state.amount}></textarea>
                             <button  type="submit" className="btn-add">+</button> 
                         </form>
+                    </div>
+                </div>
             </div>
-        </div>
         );
     }
 }

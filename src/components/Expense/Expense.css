@@ -1,24 +1,20 @@
 .create{
-    /* display: flex; */
-    /* justify-content: center; */
+    display: flex; 
+    justify-content: center;
     flex-wrap: wrap;    
-    position: absolute;
+    align-items: center;
     margin-top: 250px;
-    /* justify-content: space-around; */
     height: 15%;
     width: 65%;
     background: lightgray;
-    /* padding-top: 20px; */
-    /* border: solid red 1px; */
 }
+
 .create, .subtitle {
-    /* margin-top: 300px; */
     text-align: center;
     color: #000;
 }
 
 textarea {
-    /* display: flex; */
     padding-top: 10px;
     text-align: center;
     font-size: 18px;
@@ -26,9 +22,6 @@ textarea {
 
 }
 .btn-add {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
     color: #fff;
     margin: 5px 0;
     padding: 5px 15px;
@@ -41,11 +34,47 @@ textarea {
 .btn-update:hover, .btn-delete:hover {
     border: solid #0d1a26 2px;
 }
-/* .new-entry {
-    /* display: inline;
-    justify-content: space-around;
-    position: absolute; */
-    /* background: lightgray; */
-    /* margin: 200px 0; */
-    /* border: solid red 1px; */
-/* }  */
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.dataEntries {
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    background: #f5f5f0;
+    border: solid gray 1px;
+    width: 60%;
+}
+
+.individualEntry {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid lightgray 1px;
+    height: 35px;
+    color: #880606; 
+    font-family: 'Oxygen', sans-serif;  
+    font-size: 22px;
+    padding: 0 130px;
+}
+
+.revenueName {
+    width: 50%;
+    height: 100%;
+}
+
+.revenueAmount {
+    width: 50%;
+}
+
+.btnChange {
+    display: flex;
+    flex-direction: column;
+    align-content: right;
+    align-items: flex-end;
+    width: 100%;    
+}

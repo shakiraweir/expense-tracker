@@ -10,9 +10,9 @@ class Home extends Component {
             <div>
                 <div className="links">
                     <nav className="category">
-                        <Link to="/revenue"><h3><span className="money-left">$</span> Add Income</h3>
+                        <Link to="/revenue"><h3><span className="money-left">$</span>  Income</h3>
                         </Link>
-                        <Link to="/expense"><h3><span className="money-right">$</span> Add Expense</h3>
+                        <Link to="/expense"><h3><span className="money-right">$</span>  Expense</h3>
                         </Link>
                     </nav>
                     <footer className="total">
