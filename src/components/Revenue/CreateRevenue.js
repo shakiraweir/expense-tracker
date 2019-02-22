@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import '../Expense/Expense.css'
+import '../Revenue/Revenue.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 
 class CreateRevenue extends Component {
     constructor() {
@@ -50,22 +52,47 @@ class CreateRevenue extends Component {
                     // })
     //     })
     // }
-    render() {
-        return (
-            <div>
-                <div className="create">
-                        <h3 className="subtitle">New Revenue</h3>
-                        <form className="new-entry" onSubmit={this.handleSubmit}>
-                            <textarea cols="25" rows="1" name="name" placeholder="Title" onChange={this.handleChange} value={this.state.name}></textarea>
-                            <textarea cols="25" rows="1" name="amount" placeholder="$0.00"
+//     render() {
+//         return (
+//             <div>
+//                 <div className="create">
+//                         <h3 className="subtitle">New Revenue</h3>
+//                         <form className="new-entry" onSubmit={this.handleSubmit}>
+//                             <textarea cols="25" rows="1" name="name" placeholder="Title" onChange={this.handleChange} value={this.state.name}></textarea>
+//                             <textarea cols="25" rows="1" name="amount" placeholder="$0.00"
 
-                            onChange={this.handleChange} value={this.state.amount}></textarea>
-                            <button  type="submit" className="btn-add">+</button> 
-                        </form>
+//                             onChange={this.handleChange} value={this.state.amount}></textarea>
+//                             <button  type="submit" className="btn-add">+</button> 
+//                         </form>
+//             </div>
+//         </div>
+//         )
+//     }
+// }
+
+render() {
+    return (
+        <div>
+            <div className="links">
+                <nav className="category">
+                    <Link to="/revenue"><h3>Back</h3></Link>
+                    <Link to="/"><h3>Home</h3></Link>
+                </nav>
+            </div>
+            <div className="data">
+                <div className="create">
+                    <h3 className="subtitle">New Revenue</h3>
+                    <form className="new-entry" onSubmit={this.handleSubmit}>
+                        <textarea cols="25" rows="1" name="name" placeholder="Title" onChange={this.handleChange} value={this.state.name}></textarea>
+                        <textarea cols="25" rows="1" name="amount" placeholder="$0.00"
+
+                        onChange={this.handleChange} value={this.state.amount}></textarea>
+                        <button  type="submit" className="btn-add">+</button> 
+                    </form>
+                </div>
             </div>
         </div>
-        )
-    }
+    )
 }
-
+}
 export default CreateRevenue;

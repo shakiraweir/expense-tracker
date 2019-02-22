@@ -26,9 +26,7 @@ class Expense extends Component {
     handleSubmit(event) {
         event.preventDefault()
     } 
-<<<<<<< HEAD
-=======
-
+    
     handleDelete (event){
         event.preventDefault();
         axios
@@ -44,7 +42,6 @@ class Expense extends Component {
             console.log(err);
           });
       };
->>>>>>> expenses
     
     render() {
         let expenseList = this.state.expenses.map(exp => {

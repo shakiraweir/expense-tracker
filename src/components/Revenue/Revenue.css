@@ -1,0 +1,80 @@
+.create{
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;    
+    /* position: absolute; */
+    margin-top: 250px;
+    height: 15%;
+    width: 65%;
+    background: lightgray;
+}
+
+.create, .subtitle {
+    text-align: center;
+    color: #000;
+}
+
+textarea {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+.btn-add {
+    color: #fff;
+    margin: 5px 0;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;    
+    background: #0d1a26;
+}
+
+.btn-update:hover, .btn-delete:hover {
+    border: solid #0d1a26 2px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.dataEntries {
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    background: #f5f5f0;
+    border: solid gray 1px;
+    width: 60%;
+}
+
+.individualEntry {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid lightgray 1px;
+    height: 35px;
+    color: #880606; 
+    font-family: 'Oxygen', sans-serif;  
+    font-size: 22px;
+    padding: 0 130px;
+}
+
+.revenueName {
+    width: 50%;
+    height: 100%;
+}
+
+.revenueAmount {
+    width: 50%;
+}
+
+.btnChange {
+    display: flex;
+    flex-direction: column;
+    align-content: right;
+    align-items: flex-end;
+    width: 100%;    
+}
