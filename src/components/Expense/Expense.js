@@ -12,6 +12,7 @@ class Expense extends Component {
             expense: [ ]
         }
     }
+<<<<<<< HEAD
             componentDidMount() {
                 axios.get('https://fun-budget-tool.herokuapp.com/expense')
                     .then(res => {
@@ -34,6 +35,28 @@ class Expense extends Component {
                     <div className='expenseRevenue' key={exp.id}>
                         <span className='expenseName'>{exp.name}</span>
                         <span className='expenseAmount'> ${exp.cost}</span>    
+=======
+    componentDidMount() {
+        axios.get('https://fun-budget-tool.herokuapp.com/expense')
+            .then(res => {
+                // console.log(res.data)
+                this.setState({
+                    expense: res.data
+                })
+            })
+    }
+    handleSubmit(event) {
+        event.preventDefault()
+
+    } 
+    render() {
+        // console.log(this.state.revenue)
+        let expenseList = this.state.expense.map(exp => {
+                return (
+                    <div className='individualRevenue' key={exp.id}>
+                        <span className='revenueName'>{exp.name}</span>
+                        <span className='revenueAmount'> ${exp.amount}</span>    
+>>>>>>> expenses
                     </div>
                 )
         })
@@ -43,9 +66,10 @@ class Expense extends Component {
                     <nav className="category">
                         <Link to="/"><h3>Back</h3>
                         </Link>
-                        <Link to="/"><h3>Logout</h3>
+                        <Link to="/expense/create"><h3>Add Expense</h3>
                         </Link>
                     </nav>
+<<<<<<< HEAD
                     <div className="create">
                         <h3 className="subtitle">New Expense</h3>
                         <form className="new-entry">
@@ -56,6 +80,11 @@ class Expense extends Component {
                             <button className="btn-add"> +</button>  
                         </div>
                         {expenseList}
+=======
+                    </div>
+                <div>
+                    {expenseList}
+>>>>>>> expenses
                 </div>
             </div>
         </div>
