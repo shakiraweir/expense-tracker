@@ -73,7 +73,6 @@ class CreateExpense extends Component {
                     </div>
                 </div>
             </div>
-        </div>
         )
     }
 }
