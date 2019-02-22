@@ -6,7 +6,7 @@ import Home from '../Home/Home'
 import Revenue from '../Revenue/Revenue'
 import ShowRevenue from '../Revenue/ShowRevenue'
 import CreateRevenue from '../Revenue/CreateRevenue'
-import UpdateRevenue from '../Revenue/UpdateRevenue';
+import UpdateRevenue from '../Revenue/UpdateRevenue'
 
 import Expense from '../Expense/Expense'
 import UpdateExpense from '../Expense/UpdateExpense'
@@ -20,16 +20,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Expense Tracker</h1>
+          <h1>The Fun Budget Tool</h1>
         </header>
         <Route path ="/" exact render={() => <Home />} /> 
 
+        <Switch>
         <Route path="/revenue" exact render={() => <Revenue /> } />
         <Route path="/revenue/create" exact render={routerProps => <CreateRevenue {...routerProps} /> } />
         {/* <Route path="/revenue/show" exact render={() => <ShowRevenue /> } /> */}
         <Route path="/revenue/:id" exact render={(routerProps) => <ShowRevenue {...routerProps}/> } />
         <Route path="/revenue/edit/:id" exact render={(routerProps) => <UpdateRevenue {...routerProps}/> } />
-
+        </Switch>
+        
         <Switch>
         <Route path="/expense" exact render={() => <Expense /> } />
         <Route path="/expense/create" exact render={routerProps => <CreateExpense {...routerProps} /> } />

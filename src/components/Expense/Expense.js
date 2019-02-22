@@ -26,7 +26,7 @@ class Expense extends Component {
     handleSubmit(event) {
         event.preventDefault()
     } 
-    
+
     handleDelete (event){
         event.preventDefault();
         axios
@@ -62,6 +62,7 @@ class Expense extends Component {
                 <div className="links">
                     <nav className="category">
                         <Link to="/"><h3>Back</h3></Link>
+                        
                         <Link to="/expense/create"><h3><span className="money-right">$</span> Add Expense</h3></Link>
                     </nav>
                 </div>
