@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import CreateRevenue from './CreateRevenue'
 
 
 class Revenue extends Component {
@@ -25,10 +24,8 @@ class Revenue extends Component {
             }
             handleSubmit(event) {
                 event.preventDefault()
-
             } 
            
-    
     render() {
         // console.log(this.state.revenue)
         let revenueList = this.state.revenue.map(rev => {

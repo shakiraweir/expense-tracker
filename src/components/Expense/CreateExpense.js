@@ -64,7 +64,7 @@ class CreateExpense extends Component {
                         </form>
             </div>
         </div>
-        );
+        )
     }
 }
 

@@ -23,8 +23,8 @@ class Expense extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-
     } 
+    
     render() {
         // console.log(this.state.revenue)
         let expenseList = this.state.expense.map(exp => {
