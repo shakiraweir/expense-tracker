@@ -27,8 +27,8 @@ class Expense extends Component {
         event.preventDefault()
     } 
 
-    handleDelete (e){
-        e.preventDefault();
+    handleDelete (event){
+        event.preventDefault();
         axios
           .delete(`https://fun-budget-tool.herokuapp.com/expense/${this.state.expenses._id}`)
           .then(res => {
@@ -71,6 +71,7 @@ class Expense extends Component {
                     </div>
                 </div>
             </div>
+       
         );
     }
 }

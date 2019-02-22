@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './Expense.css'
 
@@ -7,15 +8,18 @@ class UpdateExpense extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            expenses: {}
+            expenses: {
+                name: '',
+                amount:''
+            }
         }
-        this.onChange = this.onChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
    }
 
     componentDidMount() {
         console.log('https://fun-budget-tool.herokuapp.com/expense' + this.props.match.params.id)
-        axios.get('https://fun-budget-tool.herokuapp.com/expense' + this.props.match.params.id)
+        axios.get('https://fun-budget-tool.herokuapp.com/expense/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     expenses: res.data
@@ -27,19 +31,30 @@ class UpdateExpense extends Component {
             })
     }
 
-    onChange = (e) => {
+    handleChange(event) {
+        console.log(event.target.value)
         const state = this.state.expenses
-        state[e.target.name] = e.target.value;
+        state[event.target.name] = event.target.value;
         this.setState({ expenses: state });
     }
+    // handleChange(event) {
+    //     // event.target.value
+    //     this.setState(
+    //         {  [event.target.name]: event.target.value }
+    //     )
+    // }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { name, amount } = this.state.expense
-        axios.put('https://fun-budget-tool.herokuapp.com/expense' + this.props.match.params.id, { name, amount })
+    handleSubmit(event){
+        console.log("namelogggg")
+        event.preventDefault();
+        // const { name, amount } = this.state
+        axios.put('https://fun-budget-tool.herokuapp.com/expense/' + this.props.match.params.id, {
+            name: this.state.expenses.name,
+            amount: this.state.expenses.amount
+        })
             .then((res) => {
                 console.log(res)
-                this.props.history.push('/expense' + this.props.match.params.id)
+                this.props.history.push('/expense/' + this.props.match.params.id)
             });
     }
 
@@ -55,8 +70,7 @@ class UpdateExpense extends Component {
 
                   <textarea cols="25" rows="1" name="amount" placeholder="$0.00"
                   onChange={this.handleChange} value={amount}></textarea>
-
-                  <button  type="submit" className="btn-add">+</button> 
+                  <button  type="submit" className="btn-add"> update </button>
               </form>
           </div>
       </div>
